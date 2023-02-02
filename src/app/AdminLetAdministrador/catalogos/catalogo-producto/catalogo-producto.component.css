@@ -1,0 +1,28 @@
+.btn-agregar{
+    float: right;
+}
+.Formulario label{
+
+    margin: 0%;
+    padding: 0%;
+     font-weight: bold;
+    display: block;
+}
+/* .Formulario input{
+    width: 100%;
+    outline: none;
+
+    background: transparent;
+    color: #fff;
+    outline: none;
+    font-size: 16px;
+    border-bottom: 1px solid #fff;
+} */
+
+.Formulario input{
+    width: 100%;
+    border: none;
+    margin-bottom: 5%;
+    outline: none;
+    border-bottom: 1px solid rgba(0, 0, 0,.5);
+}

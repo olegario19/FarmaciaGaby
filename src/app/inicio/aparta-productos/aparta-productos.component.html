@@ -1,0 +1,48 @@
+<app-nav-principal></app-nav-principal>
+<div class="contenedor">
+    <div class="contiene-productos">
+        <div class="row">
+            <div class="col-lg-3 .col-sm-12" *ngFor="let dato of productos">
+                <div class="card" style="width: 18rem;" >
+                    <img src="assets/logo.jpg" class="imagen-card card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{dato.vchnombre_pro}}</h5>
+                      <br>
+                      <p class="card-text"> Precio : <strong>{{dato.fltprecio}}</strong></p>
+                      <!-- <p>Precio: <strong></strong></p> -->
+                      <p class="card-text">{{dato.vchdescripcion}}</p>
+                      <a type="button" class="btn btn-outline-success btn-block" (click)="agregarProducto(dato)">Apartar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contiene-apartado">
+        <div class="apartadoProducto"  *ngFor="let consulta of consultCarrito">
+            <div>
+                <strong>Nombre: {{consulta.vchnombre_pro}}</strong>
+            </div>
+            <div>
+                <strong>Precio: {{consulta.fltprecio}} </strong>
+                
+            </div>
+            
+            <div>
+                <strong>cantid: <input class="cantidad" type="number" min="0" max="10" name="cantidad" id=""></strong>
+            </div>
+            <div>
+                <button class="btn btn-outline-danger">Eliminar</button>
+            </div>
+        </div>
+
+        <div class="botonConfirmar">
+            <button class="btn btn-outline-danger">vaciar Apartado</button>
+            <button class="btn btn-outline-success">Comfirmar Apartado</button>
+           
+        </div>
+    </div>
+
+
+</div>
+<app-foter></app-foter>

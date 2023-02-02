@@ -1,0 +1,115 @@
+<div class="contiene-info">
+  <div class="div-imagen">
+    <img class="ajuste-imagen" src="assets/logo.jpg" alt="farmaciaGaby" />
+  </div>
+  <div class="div-contacto">
+    <div class="card border-light mb-3" style="max-width: 18rem">
+      <div class="card-header">Farmacia Gaby</div>
+      <div class="card-body">
+        <h5 class="card-title">Nuestros Contactos</h5>
+        <span>Telefonos</span>
+        <p class="card-text">7461111059</p>
+        <p class="card-text">7461106502</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container text-center">
+    <h3>Catalogo Provedores</h3>
+</div>
+ <!-- Button trigger modal -->
+ 
+     <div class="row">
+         <div class="col-12">
+            <div class="container contiene-modal">
+   
+                <div class="alinear-btn">
+                    
+                      <a type="button"  class="btn btn-danger" [routerLink]="[ '/principal']">Regresar</a>
+                </div>
+                <div class="alinear-btn">
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+                        Agregar
+                      </button>
+                      
+                </div>
+         </div>
+     </div>
+ 
+
+   
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{accion}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form #Formulario_provedor="ngForm">
+                <div class="form-group">
+                  <label for="formGroupExampleInput">Nombre</label>
+                  <input type="text" [(ngModel)]="datosprovedor.nompro" name="nombre" class="form-control" id="formGroupExampleInput" placeholder="Escriba el nombre">
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Direccion</label>
+
+                    
+                    <input type="text" [(ngModel)]="datosprovedor.vchdireccion" name="direccion" class="form-control" id="formGroupExampleInput" placeholder="Eescriba la direccion">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Correo</label>
+                    <input type="email" [(ngModel)]="datosprovedor.vchcorreo" name="correo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="formGroupExampleInput">Telefono</label>
+                    <input type="text" [(ngModel)]="datosprovedor.vchtelefono" name="telefono" class="form-control" id="formGroupExampleInput" placeholder="Numero de telefono">
+                  </div>
+              </form>
+            {{datosprovedor|json}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="Formulario_provedor.reset();datosprovedor.intid=0">Close</button>
+          <button type="submit"  (click)="accionFormulario();Formulario_provedor.reset();" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="container contiene-tabla">
+  <div class="row">
+    <div class="col-12">
+        <table class="table">
+            <thead class="bg-primary">
+              <tr>
+               
+                <th scope="col">Nombre</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Telefono</th>
+                <th scope="col" class="text-center">Acciones</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let listaprovedor of consultapro">
+              <tr>
+                
+                <td>{{listaprovedor.nompro}}</td>
+                <td>{{listaprovedor.vchdireccion}}</td>
+                <td>{{listaprovedor.vchcorreo}}</td>
+                <td>{{listaprovedor.vchtelefono}}</td>
+                <td class="text-center"><button type="button" class="btn bg-warning mr-3" data-toggle="modal" data-target="#exampleModal" (click)="formularioedita(listaprovedor)">Editar</button>
+                    <button type="button" class="btn bg-danger">Eliminar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+  </div>
+</div>

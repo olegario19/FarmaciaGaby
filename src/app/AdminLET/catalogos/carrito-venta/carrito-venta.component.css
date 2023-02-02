@@ -1,0 +1,23 @@
+.table{
+
+    border: solid rgba(0, 0, 0, .2);
+}
+/* .tieneTotal{
+    border: solid rgba(0, 0, 0, .2);
+
+} */
+.total{
+    float: right;
+}
+.buscar{
+    margin-left: 5px;
+    margin-right:8px;
+    outline: none;
+    font-size: 16px;
+    background: transparent;
+    border: none;
+    border-bottom: solid 1px rgba(0,0,0,.5);
+}
+.cerrar{
+    float: right;
+}

@@ -1,0 +1,19 @@
+<!-- <div class="icono">
+    <input type="checkbox" id="check">
+    <label for="check" class="despliega-menu"><i class="fas fa-bars"></i> Menu</label>
+</div> -->
+<nav class="contienenav" #Menu id="menu">
+    
+    <input type="checkbox" id="check">
+    <label for="check" class="despliega-menu"><i class="fas fa-bars">Menu</i> </label>
+    <ul class="lista">
+        <!-- <span class="logo">Farmacia OMH</span> -->
+        <li> <a class="fas fa-sign-in-alt" [routerLink]="[ '/logeo']" > Login</a></li>
+        <li><a class="fas fa-home" [routerLink]="[ '/home' ]"> inicio</a></li>
+        <li><a  class="far fa-address-book" href=""> contacto</a></li>
+        <li><a class="fas fa-pills" href=""> Medicamentos</a></li>
+        <li><a class="fas fa-vote-yea" [routerLink]="[ '/apartaProducto' ]"> Aparta tus productos</a></li>
+    </ul>   
+
+  
+</nav>

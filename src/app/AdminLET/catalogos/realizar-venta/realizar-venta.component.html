@@ -1,0 +1,79 @@
+<div class="wrapper">
+  <app-nav-admin></app-nav-admin>
+  <app-sindebar></app-sindebar>
+ 
+   <!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+  <!-- Control sidebar content goes here -->
+</aside>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0 text-dark">Principal</h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Dashboard v1</li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+     <!--  <router-outlet></router-outlet> -->
+  
+   
+
+      <div class="container contieneCarrito">
+        <div>
+          <a type="button" [routerLink]="[ '/CarritoVenta']" class="btn btn-warning">Ver Carrito</a>
+        </div>
+
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class=" col-sm-12 col-lg-3 " *ngFor="let lista of productos">
+            <div class="card-deck">
+         
+              <div class="card" >
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{lista.vchnombre_pro}}</h5>
+                  <div><p class="card-text">Precio{{lista.fltprecio}}</p></div>
+                 
+                 <!--  <h5 class="card-title"></h5> -->
+                  <p class="card-text">{{lista.vchdescripcion}}</p>
+                  <p class="card-text">cantidad:  <input type="number" [(ngModel)]="numero" placeholder="0"  (click)="aumenta()" min="0" max="10"></p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Caducidad {{lista.fecha_caducidad}}</small>
+                </div>
+                <a type="button" class="btn btn-outline-success">Vender</a>
+                <a type="button" class="btn btn-outline-warning" (click)="agregarCarrito(lista);" >Agregar Carrito</a>
+                
+              </div>
+            
+            </div>
+          </div>
+        </div>
+       
+      </div>
+ <!--      <app-catalogo-productos></app-catalogo-productos> -->
+      <!-- /.row (main row) -->
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>
+
+<!-- /.control-sidebar -->
+</div>
+  

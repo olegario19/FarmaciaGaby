@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+          <div class="container contienebotones">
+            <div>
+              <button  type="submit" class="btn btn-primary">Hora entrada</button>
+            </div>
+            <div>
+              <button  type="submit" class="btn btn-primary">Hora salida</button>
+            </div>
+          </div>
+            <form>
+               
+               
+                <div class="form-group">
+                  <label for="fechaHora">Fecha y Hora </label>
+                  <input type="text" class="form-control" disabled [(ngModel)]="datousuario.fechaentrada" name="fecha" id="fechaHora">
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="nombre">nombre</label>
+                    <input type="text" [(ngModel)]="datousuario.nombre" disabled class="form-control" name="nombre" id="nombre">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="correo">Correo</label>
+                    <input type="email" [(ngModel)]="datousuario.correo" disabled name="correo" class="form-control" id="correo">
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="inputZip">Codigo</label>
+                    <input type="text" [(ngModel)]="datousuario.codigo" disabled name="codigo" class="form-control" id="inputZip">
+                  </div>
+                </div>
+              
+                <button  type="submit" class="btn btn-primary">Guardar Hora de entrada</button>
+              </form>
+        </div>
+    </div>
+</div>
+

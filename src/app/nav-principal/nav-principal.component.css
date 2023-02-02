@@ -1,0 +1,156 @@
+.contienenav{
+    padding: 0%;
+    padding-left: 0%;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    padding-right: 0%;
+    width: 100%;
+    height: 80px;
+    background: rgb(46, 43, 43);
+  
+}
+.lista{
+    list-style:none;
+    overflow: hidden;
+    margin-right:5%;
+    
+    padding-top:30px;
+}
+.lista li a{
+    color: #fff;
+    text-decoration: none;
+    font-size:20px;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    display: block;
+    
+}
+.lista li{
+    
+    float: right;
+    /* display: block; */
+    overflow: hidden;
+    padding-left:20px;
+    list-style-type: none;
+    display:inline;
+}
+.lista li a:hover{
+    background: rgb(105, 104, 104);;
+    color: #fff;
+    border-radius: 15px;
+    animation: rotarterxo 0.10s alternate;
+    
+}
+@keyframes rotarterxo {
+    0%{transform: rotate(0deg);}
+    20%{transform: rotate(10deg);}
+    40%{transform: rotate(-15deg);}
+    60%{transform: rotate(15deg);}
+    80%{transform: rotate(-10deg)}
+    100%{transform: rotate(0deg);}
+}
+#check{
+    
+    float: right;
+    visibility: hidden;
+}
+.despliega-menu{
+    float: right;
+    visibility:hidden;
+}
+.logo{
+    font-size:2rem;
+    font-weight: bold;
+    background: rgb(105, 104, 104);
+ 
+    color: rgb(0, 0, 0);
+    padding-left: 0%;
+    padding-top: 0%;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    transition: all 00.5s ease;
+}
+.logo:hover{
+    background: #fff;
+    border-radius: 15px;
+    transition: all 00.5s ease;
+}
+@media only screen and (max-width: 750px){
+    .contienenav{
+        overflow: hidden;
+        padding: 0%;
+        padding-left: 0%;
+        padding-top: 0%;
+        padding-bottom: 0%;
+        padding-right: 0%;
+       height: auto;
+       /* position: absolute; */
+       
+      
+    }
+    .lista {
+       float:left ;
+        text-align: center;
+        display: block;
+        margin-top: -100%;
+        /* transition: all 0.10s; */
+        position: absolute;
+    }
+ 
+    .lista li{
+        width: 100%;
+        margin-bottom:5%;
+        display: block;
+        
+        
+    }
+    .despliega-menu{
+        overflow:hidden;
+         margin: 0%;
+        margin-top: 0%;
+        margin-bottom: 0%;
+        padding-left: 20px;
+        width: 100%;
+        background: rgb(218, 210, 210);
+        height: 50px;
+       /*  float: right; */
+        visibility: visible;
+
+    }
+    .despliega-menu i {
+        color:rgb(0, 0, 0);
+       margin-top: 10px;
+        margin-right:15%;
+        overflow: hidden;
+        
+        font-size: 20px;
+        font-weight: bold;
+        float: right;
+    }
+    .despliega-menu i:hover {
+    cursor: pointer;
+    animation: rotar 1.5s alternate;
+    }
+    @keyframes rotar {
+        0%{transform: rotate(0deg);}
+        20%{transform: rotate(10deg);}
+        40%{transform: rotate(-15deg);}
+        60%{transform: rotate(15deg);}
+        80%{transform: rotate(-10deg)}
+        100%{transform: rotate(0deg);}
+    }
+    .lista li a{
+        border-bottom: solid rgba(0, 0, 0, .3);
+        display: block;
+        
+    }
+  
+    #check:checked ~ .lista{
+        /* display: block; */
+        position: relative;
+        transition: all 0.5s ease;
+        margin: 0;
+       
+      
+      }
+}

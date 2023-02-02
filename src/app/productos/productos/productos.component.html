@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<div class="container contiene-pro">
+  <div class="row">
+    <div class="col-4" *ngFor="let productos of productoss">
+      <div class="card mb-3" style="max-width: 540px">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img
+              class="card-img-top"
+              src="assets/imagenes/productos.jpg"
+              alt="..."
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{ productos.vchnombre_pro }}</h5>
+              <samp>Precio: </samp>
+              <span>{{ productos.fltprecio | currency }} </span>
+              <p><samp>Cantidad: </samp> {{ productos.intcantidad }}</p>
+              <p class="card-text">
+                <samp>Descripcion:</samp>{{ productos.vchdescripcion }}
+              </p>
+              <samp>Fecha Caducidad: </samp>
+              <p>{{ productos.fecha_caducidad }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

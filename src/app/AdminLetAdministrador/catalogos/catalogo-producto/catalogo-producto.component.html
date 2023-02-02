@@ -1,0 +1,147 @@
+
+<div class="wrapper">
+    <app-navbar-admin></app-navbar-admin>
+   <app-sindebar-admin></app-sindebar-admin>
+  
+   <!--  <app-contenido-p></app-contenido-p> -->
+  
+    <!-- Content Wrapper. Contains page content -->
+   <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Principal</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Dashboard v1</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+  
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                       <!-- Button trigger modal -->
+                    <button class="btn-agregar btn btn-outline-success" data-toggle="modal" data-target="#exampleModal">Agregar</button>
+                    <table class="table">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col">nombre</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Fecha Caducidad</th>
+                            <th scope="col">Stock</th>
+                            <th scope="col">Provedor</th>
+                          </tr>
+                        </thead>
+                        <tbody *ngFor="let dato of consultaproducto">
+                          <tr>
+                            
+                            <td>{{dato.vchnombre_pro}}</td>
+                            <td>{{dato.fltprecio}}</td>
+                            <td>{{dato.vchdescripcion}}</td>
+                            <td>{{dato.fecha_caducidad}}</td>
+                            <td>{{dato.intcantidad}}</td>
+                            <td>{{dato.provedor.nompro}}</td>
+                          </tr>
+                       
+                        </tbody>
+                      </table>
+                  </div>
+              </div>
+
+             
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button>
+   -->
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form #miform="ngForm" action="" class="Formulario">
+                <label for="">Nombre</label>
+                <input type="text" placeholder="Escriba Nombre" [(ngModel)]="nombreproducto" #nombre="ngModel" name="nom" required minlength="4" maxlength="30">
+                <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)"class="text text-danger small" >
+                    <div *ngIf="nombre.errors?.required==true" >Campo requerido</div>
+                    <div *ngIf="nombre.errors?.minlength">Itroducio {{nombre.errors.minlength.actualLength}} Caracter, el campo requiere {{nombre.errors.minlength.requiredLength}} caracteres</div>
+                </div>
+
+                <label for="">Precio</label>
+                <input type="text" placeholder="Escriba Precio" [(ngModel)]="name" #precio="ngModel" name="preciuos" required minlength="1" maxlength="20">
+                <div *ngIf="precio.invalid && (precio.dirty || precio.touched) " class="text text-danger small">
+                    <div *ngIf="precio.errors?.required==true" >Campo Requerido</div>
+                    <div *ngIf="precio.errors?.minlength" >Introducio {{precio.errors.minlength.actualLength}} caracter, el campo requiere {{precio.errors.minlength.requiredLength}} caracteres</div>
+                </div>
+
+                <label for="">Descripcion</label>
+                <input type="text" placeholder="Escriba Dscripcion" [(ngModel)]="des" #descripcion="ngModel" name="descripcion" required minlength="10" maxlength="100">
+                <div *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched) " class="text text-danger small">
+                    <div *ngIf="descripcion.errors?.required==true" > Campo requerido</div>
+                    <div *ngIf="descripcion.errors?.minlength" >Introducio {{descripcion.errors.minlength.actualLength}} caracter,el campo requiere maximo {{descripcion.errors.minlength.requiredLength}} caracteres</div>
+
+                </div>
+
+                <label for="">Fecha Vencimineto</label>
+                <input type="text" placeholder="Escriba Caducidad" [(ngModel)]="fech" #fecha="ngModel" name="fecha" required minlength="4" maxlength="50">
+                <div *ngIf="fecha.invalid &&(fecha.dirty || fecha.touched)" class="text text-danger small">
+                    <div *ngIf="fecha.errors?.required==true" >Campo Requerido</div>
+                </div>
+                
+
+                <label for="">Stock</label>
+                <input type="number" placeholder="Escriba Stock" [(ngModel)]="canti" #cantidad="ngModel" name="cantidad" required minlength="2" maxlength="5">
+                <div *ngIf="cantidad.invalid &&(cantidad.dirty || cantidad.touched) " class="text text-danger samll" >
+                    <div *ngIf="cantidad.errors?.required==true">Campo requerido</div>
+                </div>
+                <label for="">Provedor</label>
+                <select id="disabledSelect" class="form-control"  >
+                    <option >Eliga una Opcion...</option>
+                    <option *ngFor="let cmbpro of cmbProvedor" value="{{cmbpro.id}}">{{cmbpro.nombre}}</option>
+                 
+                  </select>
+                <!-- <select name="" id=""></select> -->
+               <!--  <input type="text"  required minlength="4" maxlength="30"> -->
+
+            </form>
+           <!--  {{errors|json}} -->
+            {{nombre.errors|json}} 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="accionBoton()">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+          </div>
+        <!-- /.row (main row) -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  
+     <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  
+  <!-- /.control-sidebar -->
+  </div>

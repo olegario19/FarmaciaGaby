@@ -1,0 +1,55 @@
+.contine{
+    display: flex;
+    background: rgba(230, 232, 233, 0.828);
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.imagenlogo{
+    width:200px;
+    height: 200px;
+}
+
+.medida1{
+    margin-left: 15px;
+
+  
+   
+}
+.medida2{
+    margin-right: 15px;
+
+}
+.contiene-menu{
+    border-radius:5px;
+    background: rgb(141, 208, 235);
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.boton-menu{
+    flex: auto;
+    /* background: blanchedalmond; */
+    text-align: center;
+
+}
+.boton-menu a{
+    font-size: 1.4rem;
+    color: black;
+    /* border-right: 1px solid rgba(0,0,0,.5); */
+    display: block;
+    font-weight: bold;
+    text-decoration: none;
+   
+ }
+ .boton-menu a:hover{
+     cursor: pointer;
+     background: rgba(0, 0, 0, .1)
+ }
+ /*contiene_productoExpiracion*/
+ .contiene_productoExpiracion{
+     background: rgba(230, 232, 233, 0.828); 
+     margin-top: 2%;
+ }

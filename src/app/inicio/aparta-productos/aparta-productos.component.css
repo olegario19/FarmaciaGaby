@@ -1,0 +1,93 @@
+.contenedor{
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+.contiene-productos{
+  
+    overflow: hidden    ;
+    width: 70%;
+    margin-left:2%;
+    margin-top: 2%;
+}
+.contiene-apartado{
+  
+    overflow: hidden;
+    margin-top: 2%;
+    width: 30%;
+}
+.imagen-card{
+    height:100px;
+}
+/* .imagen-card:hover{
+    cursor: pointer;
+    background:transparent;
+} */
+.card:hover{
+    background: rgba(0, 0, 0, .2);
+    cursor: pointer;
+    transition: all 0.5s ease;
+    border-radius:20px;
+    /* border: rgba(18, 218, 108, 1); */
+    /* color: rgb(); */
+
+}
+
+/* Coniene Apartado*/
+
+.apartadoProducto{
+    margin-top: 2%;
+    display: flex;
+    overflow: hidden;
+    justify-content: space-evenly;
+  
+    background:rgb(187, 194, 199);
+    border-radius: 20px;
+}
+.apartadoProducto:hover{
+    transition: all 1s ease;
+    background: black;
+    color: #fff;;
+    cursor: pointer;
+
+}
+.cantidad{
+    /* margin-top: ;
+    margin: 0%; */
+    border-bottom:solid 1px black ;
+    background:rgb(187, 194, 199);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+   
+    width: 50px;
+}
+.cantidad:hover{
+    background:black ;
+    color: #fff;
+   
+}
+.botonConfirmar{
+    overflow: hidden;
+   display: flex;
+   justify-content: space-evenly;
+    margin-top: 2%;
+    text-align: center;
+    width: 100%;
+}
+@media only screen and (max-width: 750px) {
+    .contenedor{
+        width: 100%;
+        display: block;
+    }
+    .contiene-productos{
+        border: solid 1px;
+        width:100%;
+    }
+    .contiene-apartado{
+        border: solid 1px;
+        width: 100%;
+    }
+    
+    
+}

@@ -1,0 +1,40 @@
+.contiene-info{
+    background:rgba(0, 0, 0, .1); 
+    display: flex;
+    justify-content: space-between;
+}
+.div-imagen{
+    border-radius:10px;
+    margin-left: 15px;
+}
+.ajuste-imagen{
+    width: 200px;
+    border-radius:10px;
+    height: 200px;
+}
+.div-contacto{
+    border-radius: 10px;
+    margin-right: 15px;
+}
+.card{
+    border-radius: 10px;
+}
+/*************************************************/
+.titulo{
+    text-align: center;
+}
+.contiene-tabla{
+    margin-top: 15px;
+}
+.table tbody{
+    background: rgba(0, 0, 0, .1);
+}
+
+.contiene-modal{
+    display: flex;
+    width: 100%;
+    margin-top:10px;
+    justify-content:space-between;
+    
+    
+}

@@ -1,0 +1,21 @@
+.titulo{
+    text-align: center;
+}
+.tienecuentaregresiva{
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+.caja{
+    margin: 20px;
+    color: green;
+}
+.mensajeHora{
+
+
+    display: flex;
+    overflow: hidden;
+    justify-content: flex-end;
+}
+
+ 

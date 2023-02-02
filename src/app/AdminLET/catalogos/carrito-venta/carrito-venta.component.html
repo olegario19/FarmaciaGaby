@@ -1,0 +1,104 @@
+<div class="wrapper">
+    <app-nav-admin></app-nav-admin>
+    <app-sindebar></app-sindebar>
+   
+     <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Principal</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Dashboard v1</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+  
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+       <!--  <router-outlet></router-outlet> -->
+       <div class="container" *ngIf="muestra()">
+        <h1>Selecciona Producto</h1>
+     <!--    <button class="btn  btn-outline-success" (click)=" buscarproducto()">Buscar</button>
+        <input class="buscar" type="text" [(ngModel)]="nombre" placeholder="Buscar"> -->
+        <button type="button" class="cerrar btn btn-outline-danger" (click)="cerrar()">Cerrar</button>
+        <table class="table">
+          <thead  class="thead-dark">
+            <tr>
+              <th scope="col">nombre</th>
+              <th scope="col">descripcion</th>
+              <th scope="col">precio</th>
+              <th scope="col">Accion</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let dato of buscaProducto, let ind of index">
+            <tr>
+              
+              <td>{{dato.vchnombre_pro}}</td>
+              <td>{{dato.vchdescripcion}}</td>
+              <td>{{dato.fltprecio |currency}}</td>
+              
+              <td><button class="btn btn-outline-success "  (click)="agregar(dato)">Agregar</button></td>
+            </tr>
+          </tbody>
+        </table>
+     
+       </div>
+       
+       <div class="container">
+        <h1>Venta</h1>
+
+       
+        <input class="buscar" type="text" [(ngModel)]="nombre" placeholder="Buscar">
+        <button class="btn  btn-outline-success" (click)="buscarproducto()">Buscar</button>
+        <!-- {{buscar.nombre |json}} -->
+        <table class="table">
+          <thead  class="thead-dark">
+            <tr>
+              <th scope="col">nombre</th>
+              <th scope="col">descripcion</th>
+              <th scope="col">precio</th>
+              <th scope="col">Accion</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let dato of datosCarrito, let ind of index">
+            <tr>
+              
+              <td>{{dato.vchnombre_pro}}</td>
+              <td>{{dato.vchdescripcion}}</td>
+              <td>{{dato.fltprecio |currency}}</td>
+              
+              <td><button class="btn btn-outline-danger " (click)="eliminar(dato);">Eliminar</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="container tieneTotal">
+           <div class=" total">
+               <label >Total</label>
+               <input type="text" [(ngModel)]="sumatotal "   disabled name="sumatotal" >
+           </div>
+        </div>
+       </div>
+   <!--      <app-catalogo-productos></app-catalogo-productos> -->
+        <!-- /.row (main row) -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  
+  <!-- /.control-sidebar -->
+  </div>
+    

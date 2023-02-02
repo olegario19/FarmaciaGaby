@@ -1,0 +1,79 @@
+
+<header>
+  <nav>
+    <u>
+      <li><a href="">Inicio</a></li>
+      <li><a href="">salir</a></li>
+      <li><a href="">Contacto</a></li>
+      <li><a href="">Otra cosaaa</a></li>
+    </u>
+  </nav>
+</header>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+          <h1> Formulacio {{accion}}</h1>
+            <form  >
+                <div class="form-group">
+                  <label for="formGroupExampleInput2">Id</label>
+                  <input type="text"    class="form-control" [(ngModel)]="provedoresmodels.intid" name="id" id="formGroupExampleInput2" placeholder="id">
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Nombre</label>
+                    <input type="text" class="form-control" [(ngModel)]="provedoresmodels.nompro" name="nombre" id="formGroupExampleInput2" placeholder="nombre Provedor">
+                  </div>
+                  <div class="form-group">
+                    <label for="formGroupExampleInput2">Direccion</label>
+                    <input type="text"    [(ngModel)]="provedoresmodels.vchdireccion" name="direccion" class="form-control" id="formGroupExampleInput2" placeholder="direccion">
+                  </div>
+                  <div class="form-group">
+                    <label for="formGroupExampleInput2">correo</label>
+                    <input type="text"  [(ngModel)]="provedoresmodels.vchcorreo"  name="correo" class="form-control" id="formGroupExampleInput2" placeholder="correo">
+                  </div>
+                  <div class="form-group">
+                    <label for="formGroupExampleInput2">telefno</label>
+                    <input type="text"  [(ngModel)]="provedoresmodels.vchtelefono" name="telefono" class="form-control" id="formGroupExampleInput2" placeholder="telefono">
+                  </div>
+                  <button type="submit"  (click)="funcionFormulario()"  class="btn bg-primary"> {{canbiobtn}} </button>
+                 
+                  <!-- [disabled]="formHigiene.invalid"  -->
+                 {{provedoresmodels|json}} 
+                 <div>{{provedor|json}}</div>
+                 
+              </form>
+        </div>
+    </div>
+</div>
+<div class="container contiene-tabla">
+  <div class="row">
+    <div class="col-12">
+        <table class="table">
+            <thead class="bg-primary">
+              <tr>
+               
+                <th scope="col">Nombre</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Telefono</th>
+                <th scope="col" class="text-center">Acciones</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let listaprovedor of consultapro">
+              <tr>
+                
+                <td>{{listaprovedor.nompro}}</td>
+                <td>{{listaprovedor.vchdireccion}}</td>
+                <td>{{listaprovedor.vchcorreo}}</td>
+                <td>{{listaprovedor.vchtelefono}}</td>
+                <td class="text-center"><button type="button" (click)="editarprovedor(listaprovedor)"  class="btn bg-warning mr-3">Editar</button>
+                    <button type="button" class="btn bg-danger">Eliminar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+  </div>
+</div>
+

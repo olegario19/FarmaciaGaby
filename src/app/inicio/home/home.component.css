@@ -1,0 +1,93 @@
+
+.contieneinfo{
+    margin-top: 50px;
+}
+.confi-imagen{
+height:150px;
+
+}
+.segundo-menu{
+    margin-top:25px;
+    background: rgb(141, 208, 235);
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    text-align: center;
+   
+    
+}
+.boton-menu{
+    flex: auto;
+    /* background: blanchedalmond; */
+    text-align: center;
+
+}
+.boton-menu a{
+
+    color: black;
+    font-size:2rem;
+    /* border-right: 1px solid rgba(0,0,0,.5); */
+    display: block;
+    font-weight: bold;
+
+ }
+ .boton-menu a:hover{
+     cursor: pointer;
+     background: rgba(0, 0, 0, .1)
+
+ }
+ .wrapper{
+    /*  height: 100vh; */
+     display: flex;
+     overflow: hidden;
+     flex-direction: column;
+   /*   min-width: 100vh; */
+ }
+ .contiene-CuerpoHorario{
+    
+     text-align: center;
+     margin-bottom: 20px;
+ }
+ h4{
+     font-weight: bold;
+     text-align: center;
+ }
+.Horario{
+    border-bottom: solid rgba(0, 0, 0, .2);
+    background: rgb(65, 63, 63);
+    color: #fff;
+}
+.Horario:hover{
+    cursor: pointer;
+    transition: all 00.5s ease;
+    color: black;
+    background: transparent;
+    border-radius:25px;
+}
+.imagen-articulosInteresantes{
+    margin-left:50px;
+    margin-top:20px;
+    width: 50%;
+    height: 100px;
+}
+/* .imagen-articulosInteresantes1{
+    
+    width: 50%;
+} */
+.contiene-articuloInteresarte{
+    list-style: none;
+}
+.titulo{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(2, 122, 219);
+}
+.contiene-articuloInteresarte li a{
+    color: rgb(37, 189, 37);
+    font-weight: bold;
+    border-radius: 20px;
+}
+.contiene-articuloInteresarte li a:hover{
+    background: rgba(0, 0, 0, .5);
+}
